@@ -635,7 +635,7 @@ if(cEl&&window.IntersectionObserver){new IntersectionObserver(function(e){e.forE
     <div class="modal-topo">
       <div>
         <div class="modal-titulo">🌿 Garanta sua unidade</div>
-        <div class="modal-sub">Preencha o formulário · Resposta em até 2h</div>
+        <div class="modal-sub">Preencha o formulário · Resposta em até 15 minutos</div>
       </div>
       <button class="modal-fechar" onclick="fecharForm()">✕</button>
     </div>
@@ -644,6 +644,7 @@ if(cEl&&window.IntersectionObserver){new IntersectionObserver(function(e){e.forE
     <div class="modal-corpo" id="modalCorpo">
       <form id="formLead" action="https://formspree.io/f/mgorkdoq" method="POST">
         <input type="hidden" name="_subject" value="Lead Bosque Villaggio">
+        <input type="hidden" name="email" value="marcoschavesseucorretor@gmail.com">
         <input type="hidden" name="_next" value="">
         <input type="hidden" name="Empreendimento" value="Bosque Villaggio - Eusebio/CE">
 
@@ -667,17 +668,13 @@ if(cEl&&window.IntersectionObserver){new IntersectionObserver(function(e){e.forE
           <label class="fm-label">Renda mensal familiar <b>*</b></label>
           <select class="fm-sel" name="Renda_mensal" id="selRenda" required>
             <option value="">Selecione...</option>
-            <option value="Abaixo de R$20.000">Abaixo de R$ 20.000</option>
             <option value="R$20.000 a R$30.000">R$ 20.000 a R$ 30.000</option>
             <option value="R$30.000 a R$50.000">R$ 30.000 a R$ 50.000</option>
             <option value="Acima de R$50.000">Acima de R$ 50.000</option>
           </select>
         </div>
 
-        <div class="fm-disq" id="fmDisq">
-          <strong>⚠️ Perfil não compatível</strong>
-          <span>Renda mínima de R$ 20.000/mês necessária para o financiamento.</span>
-        </div>
+        <div class="fm-disq" id="fmDisq" style="display:none"></div>
 
         <div class="fm-field">
           <label class="fm-label">Previsão de compra <b>*</b></label>
@@ -700,7 +697,7 @@ if(cEl&&window.IntersectionObserver){new IntersectionObserver(function(e){e.forE
       <div class="modal-ok-titulo">Interesse recebido!</div>
       <div class="modal-ok-texto">
         <strong style="color:#c9a84c">Marcos Lima</strong> entrará em contato com você<br>
-        pelo WhatsApp em até 2 horas.<br><br>
+        pelo WhatsApp em até 15 minutos.<br><br>
         Bosque Villaggio · CRECI 26445 · @paraisoimobiliario
       </div>
       <a class="modal-ok-cta" href="https://wa.me/5585997635718?text=Ol%C3%A1%20Marcos!%20Acabei%20de%20preencher%20o%20formul%C3%A1rio%20do%20Bosque%20Villaggio." target="_blank">
@@ -720,17 +717,9 @@ document.getElementById('inpWA').addEventListener('input', function() {
   this.value = v;
 });
 
-// Desqualificação renda
+// Sem trava de renda — todos os leads são aceitos
 document.getElementById('selRenda').addEventListener('change', function() {
-  var disq = document.getElementById('fmDisq');
-  var btn  = document.getElementById('btnEnviar');
-  if (this.value === 'Abaixo de R$20.000') {
-    disq.style.display = 'block';
-    btn.disabled = true;
-  } else {
-    disq.style.display = 'none';
-    btn.disabled = false;
-  }
+  document.getElementById('fmDisq').style.display = 'none';
 });
 
 // Submit via fetch (sem redirecionar)
