@@ -295,6 +295,68 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.06);paddin
 .modal-ok-cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#25d366,#128c7e);border:none;border-radius:22px;padding:13px 28px;color:#fff;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.3)}
 @media(max-width:540px){.fm-grid{grid-template-columns:1fr}.modal-box{border-radius:14px}.modal-corpo{padding:18px}}
 
+
+/* ═══ MODAL HUBSPOT ═══ */
+.hs-overlay{display:none;position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,0.88);backdrop-filter:blur(8px);overflow-y:auto;padding:20px 16px}
+.hs-overlay.ativo{display:block}
+.hs-box{background:#0d1a0e;border:1px solid rgba(201,168,76,0.4);border-radius:20px;max-width:520px;margin:0 auto;box-shadow:0 24px 80px rgba(0,0,0,0.8);animation:hsPop .3s ease;overflow:hidden}
+@keyframes hsPop{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
+.hs-topo{background:linear-gradient(135deg,rgba(201,168,76,0.18),rgba(201,168,76,0.04));padding:20px 24px 16px;border-bottom:1px solid rgba(201,168,76,0.15);display:flex;justify-content:space-between;align-items:flex-start}
+.hs-titulo{font-family:'Playfair Display',serif;font-size:20px;color:#c9a84c;line-height:1.2}
+.hs-sub{font-size:12px;color:rgba(240,232,216,0.55);margin-top:4px}
+.hs-fechar{background:rgba(255,255,255,0.08);border:none;color:#f0e8d8;width:32px;height:32px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:12px;transition:background .2s}
+.hs-fechar:hover{background:rgba(255,255,255,0.18)}
+.hs-corpo{padding:24px 24px 28px;min-height:200px}
+.hs-loading{text-align:center;padding:40px 20px;color:rgba(240,232,216,0.6);font-size:14px}
+.hs-loading-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#c9a84c;animation:hsDot 1.2s infinite;margin:0 3px}
+.hs-loading-dot:nth-child(2){animation-delay:.2s}
+.hs-loading-dot:nth-child(3){animation-delay:.4s}
+@keyframes hsDot{0%,80%,100%{transform:scale(.7);opacity:.5}40%{transform:scale(1);opacity:1}}
+
+/* Override estilos HubSpot para tema escuro */
+.hs-corpo .hs-form-private{font-family:'DM Sans',sans-serif!important}
+.hs-corpo .hs-form-private .hs-form-field{margin-bottom:14px!important}
+.hs-corpo .hs-form-private label{color:rgba(240,232,216,0.7)!important;font-size:12px!important;font-weight:500!important;letter-spacing:0.08em!important;text-transform:uppercase!important;margin-bottom:5px!important;display:block!important}
+.hs-corpo .hs-form-private input[type=text],
+.hs-corpo .hs-form-private input[type=email],
+.hs-corpo .hs-form-private input[type=tel],
+.hs-corpo .hs-form-private input[type=number],
+.hs-corpo .hs-form-private select,
+.hs-corpo .hs-form-private textarea{
+  width:100%!important;background:rgba(255,255,255,0.08)!important;
+  border:1px solid rgba(201,168,76,0.28)!important;border-radius:10px!important;
+  padding:11px 14px!important;color:#f0e8d8!important;font-size:14px!important;
+  font-family:'DM Sans',sans-serif!important;outline:none!important;
+  box-sizing:border-box!important;transition:border .2s!important;
+  -webkit-appearance:none!important;appearance:none!important
+}
+.hs-corpo .hs-form-private input:focus,
+.hs-corpo .hs-form-private select:focus{border-color:#c9a84c!important;background:rgba(255,255,255,0.11)!important}
+.hs-corpo .hs-form-private select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a84c' stroke-width='1.5' fill='none'/%3E%3C/svg%3E")!important;
+  background-repeat:no-repeat!important;background-position:right 14px center!important;
+  padding-right:38px!important
+}
+.hs-corpo .hs-form-private select option{background:#0d1a0e!important;color:#f0e8d8!important}
+.hs-corpo .hs-form-private .hs-button{
+  width:100%!important;background:linear-gradient(135deg,#c9a84c,#a8863a)!important;
+  border:none!important;border-radius:12px!important;padding:14px!important;
+  color:#000!important;font-size:14px!important;font-weight:700!important;
+  font-family:'DM Sans',sans-serif!important;cursor:pointer!important;
+  letter-spacing:0.05em!important;text-transform:uppercase!important;
+  box-shadow:0 4px 18px rgba(201,168,76,0.3)!important;margin-top:6px!important;
+  transition:opacity .2s!important
+}
+.hs-corpo .hs-form-private .hs-button:hover{opacity:.88!important}
+.hs-corpo .hs-form-private .hs-error-msgs{list-style:none!important;padding:0!important;margin:4px 0 0!important}
+.hs-corpo .hs-form-private .hs-error-msgs li{color:#f08080!important;font-size:11px!important}
+.hs-corpo .hs-form-private .submitted-message{color:#5ddb8a!important;text-align:center!important;padding:20px 0!important;font-size:15px!important}
+.hs-corpo .hs-richtext{color:rgba(240,232,216,0.5)!important;font-size:11px!important}
+.hs-corpo .hs-form-private fieldset{max-width:100%!important;border:none!important;padding:0!important}
+.hs-corpo .legal-consent-container{color:rgba(240,232,216,0.45)!important;font-size:11px!important}
+.hs-corpo .hs-form-private .hs-form-field .input{margin:0!important}
+@media(max-width:540px){.hs-box{border-radius:14px}.hs-corpo{padding:18px 18px 22px}}
+
 </style>
 
 </head>
@@ -627,151 +689,79 @@ if(cEl&&window.IntersectionObserver){new IntersectionObserver(function(e){e.forE
 
 
 
-<!-- ═══ MODAL FORMULÁRIO ═══ -->
-<div class="modal-bg" id="modalBg" onclick="bgClick(event)">
-  <div class="modal-box" id="modalBox">
 
-    <!-- Topo -->
-    <div class="modal-topo">
+
+
+<!-- ═══ MODAL HUBSPOT ═══ -->
+<div class="hs-overlay" id="hsOverlay" onclick="hsBgClick(event)">
+  <div class="hs-box">
+    <div class="hs-topo">
       <div>
-        <div class="modal-titulo">🌿 Garanta sua unidade</div>
-        <div class="modal-sub">Preencha o formulário · Resposta em até 15 minutos</div>
+        <div class="hs-titulo">🌿 Garanta sua unidade</div>
+        <div class="hs-sub">Preencha o formulário · Retorno em até 15 minutos</div>
       </div>
-      <button class="modal-fechar" onclick="fecharForm()">✕</button>
+      <button class="hs-fechar" onclick="fecharForm()">✕</button>
     </div>
-
-    <!-- Formulário -->
-    <div class="modal-corpo" id="modalCorpo">
-      <form id="formLead" action="https://formspree.io/f/mgorkdoq" method="POST">
-        <input type="hidden" name="_subject" value="Lead Bosque Villaggio">
-        <input type="hidden" name="email" value="marcoschavesseucorretor@gmail.com">
-        <input type="hidden" name="_next" value="">
-        <input type="hidden" name="Empreendimento" value="Bosque Villaggio - Eusebio/CE">
-
-        <div class="fm-field">
-          <label class="fm-label">Nome completo <b>*</b></label>
-          <input class="fm-input" type="text" name="Nome_completo" placeholder="Seu nome completo" required minlength="3">
-        </div>
-
-        <div class="fm-grid">
-          <div class="fm-field">
-            <label class="fm-label">WhatsApp <b>*</b></label>
-            <input class="fm-input" type="tel" name="WhatsApp" id="inpWA" placeholder="(85) 99999-9999" required>
-          </div>
-          <div class="fm-field">
-            <label class="fm-label">Cargo / Profissão <b>*</b></label>
-            <input class="fm-input" type="text" name="Cargo" placeholder="Ex: Empresário, Médico..." required minlength="2">
-          </div>
-        </div>
-
-        <div class="fm-field">
-          <label class="fm-label">Renda mensal familiar <b>*</b></label>
-          <select class="fm-sel" name="Renda_mensal" id="selRenda" required>
-            <option value="">Selecione...</option>
-            <option value="R$20.000 a R$30.000">R$ 20.000 a R$ 30.000</option>
-            <option value="R$30.000 a R$50.000">R$ 30.000 a R$ 50.000</option>
-            <option value="Acima de R$50.000">Acima de R$ 50.000</option>
-          </select>
-        </div>
-
-        <div class="fm-disq" id="fmDisq" style="display:none"></div>
-
-        <div class="fm-field">
-          <label class="fm-label">Previsão de compra <b>*</b></label>
-          <select class="fm-sel" name="Previsao_compra" required>
-            <option value="">Selecione...</option>
-            <option value="Nos proximos 30 dias">Nos próximos 30 dias</option>
-            <option value="Nos proximos 60 dias">Nos próximos 60 dias</option>
-            <option value="Nos proximos 90 dias">Nos próximos 90 dias</option>
-            <option value="Ainda pesquisando">Ainda estou pesquisando</option>
-          </select>
-        </div>
-
-        <button class="fm-btn" type="submit" id="btnEnviar">🏡 Quero garantir minha unidade</button>
-      </form>
-    </div>
-
-    <!-- Card Sucesso -->
-    <div class="modal-ok" id="modalOk">
-      <div class="modal-ok-icon">✅</div>
-      <div class="modal-ok-titulo">Interesse recebido!</div>
-      <div class="modal-ok-texto">
-        <strong style="color:#c9a84c">Marcos Lima</strong> entrará em contato com você<br>
-        pelo WhatsApp em até 15 minutos.<br><br>
-        Bosque Villaggio · CRECI 26445 · @paraisoimobiliario
+    <div class="hs-corpo" id="hsCorpo">
+      <div class="hs-loading" id="hsLoading">
+        <div style="margin-bottom:12px">Carregando formulário...</div>
+        <span class="hs-loading-dot"></span>
+        <span class="hs-loading-dot"></span>
+        <span class="hs-loading-dot"></span>
       </div>
-      <a class="modal-ok-cta" href="https://wa.me/5585997635718?text=Ol%C3%A1%20Marcos!%20Acabei%20de%20preencher%20o%20formul%C3%A1rio%20do%20Bosque%20Villaggio." target="_blank">
-        💬 Falar agora no WhatsApp
-      </a>
     </div>
-
   </div>
 </div>
 
+<script src="https://js.hsforms.net/forms/v2.js"></script>
 <script>
-// Máscara WhatsApp
-document.getElementById('inpWA').addEventListener('input', function() {
-  var v = this.value.replace(/\D/g, '');
-  if (v.length <= 10) v = v.replace(/(\d{2})(\d{4})(\d*)/, '($1) $2-$3');
-  else v = v.replace(/(\d{2})(\d{5})(\d*)/, '($1) $2-$3');
-  this.value = v;
-});
+var _hsLoaded = false;
 
-// Sem trava de renda — todos os leads são aceitos
-document.getElementById('selRenda').addEventListener('change', function() {
-  document.getElementById('fmDisq').style.display = 'none';
-});
-
-// Submit via fetch (sem redirecionar)
-document.getElementById('formLead').addEventListener('submit', function(e) {
-  e.preventDefault();
-  var btn  = document.getElementById('btnEnviar');
-  btn.disabled = true;
-  btn.textContent = '⏳ Enviando...';
-
-  fetch(this.action, {
-    method: 'POST',
-    body: new FormData(this),
-    headers: { 'Accept': 'application/json' }
-  })
-  .then(function(r) {
-    if (r.ok) {
-      document.getElementById('modalCorpo').style.display = 'none';
-      document.getElementById('modalOk').style.display    = 'block';
-      if (typeof fbq !== 'undefined') fbq('track', 'CompleteRegistration', {value: 639900, currency: 'BRL'});
-      if (typeof gtag !== 'undefined') gtag('event', 'form_submit', {event_category: 'Lead'});
-    } else {
-      throw new Error('Erro ' + r.status);
-    }
-  })
-  .catch(function(err) {
-    btn.disabled = false;
-    btn.textContent = '🏡 Quero garantir minha unidade';
-    alert('Falha ao enviar. Verifique sua conexão e tente novamente.\nErro: ' + err.message);
-  });
-});
-
-// Abrir / fechar
 function abrirForm() {
-  var bg = document.getElementById('modalBg');
-  bg.classList.add('ativo');
+  var overlay = document.getElementById('hsOverlay');
+  overlay.classList.add('ativo');
   document.body.style.overflow = 'hidden';
-  document.getElementById('modalCorpo').style.display = 'block';
-  document.getElementById('modalOk').style.display    = 'none';
-  var btn = document.getElementById('btnEnviar');
-  if (btn) { btn.disabled = false; btn.textContent = '🏡 Quero garantir minha unidade'; }
-  document.getElementById('fmDisq').style.display = 'none';
-  document.getElementById('formLead').reset();
+
   if (typeof fbq !== 'undefined') fbq('track', 'InitiateCheckout');
   if (typeof gtag !== 'undefined') gtag('event', 'open_form', {event_category: 'CTA'});
+
+  if (!_hsLoaded && typeof hbspt !== 'undefined') {
+    _carregarForm();
+  } else if (!_hsLoaded) {
+    var timer = setInterval(function() {
+      if (typeof hbspt !== 'undefined') {
+        clearInterval(timer);
+        _carregarForm();
+      }
+    }, 200);
+  }
 }
+
+function _carregarForm() {
+  document.getElementById('hsLoading').style.display = 'none';
+  hbspt.forms.create({
+    region: "na1",
+    portalId: "45220372",
+    formId: "ea13ff18-505e-47bb-b23c-bfd68e3bde66",
+    target: "#hsCorpo",
+    onFormSubmitted: function() {
+      if (typeof fbq !== 'undefined') fbq('track', 'CompleteRegistration', {value: 639900, currency: 'BRL'});
+      if (typeof gtag !== 'undefined') gtag('event', 'form_submit', {event_category: 'Lead'});
+      setTimeout(fecharForm, 5000);
+    }
+  });
+  _hsLoaded = true;
+}
+
 function fecharForm() {
-  document.getElementById('modalBg').classList.remove('ativo');
+  document.getElementById('hsOverlay').classList.remove('ativo');
   document.body.style.overflow = '';
 }
-function bgClick(e) {
-  if (e.target === document.getElementById('modalBg')) fecharForm();
+
+function hsBgClick(e) {
+  if (e.target === document.getElementById('hsOverlay')) fecharForm();
 }
+
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') fecharForm();
 });
