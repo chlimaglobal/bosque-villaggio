@@ -463,29 +463,56 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.06);paddin
 </section>
 
 
-<!-- ═══ SEÇÃO VÍDEO ═══ -->
-<section style="background:var(--dark);padding:72px 28px;text-align:center">
-  <div style="max-width:900px;margin:0 auto">
-    <div class="s-eye">Vídeo</div>
-    <h2 style="margin-bottom:14px">Conheça o Bosque Villaggio</h2>
-    <p class="s-desc" style="margin:0 auto 40px">Veja como é viver no empreendimento mais exclusivo do Eusébio.</p>
+<!-- ═══ SEÇÃO VÍDEOS ═══ -->
+<section style="background:var(--dark);padding:72px 28px">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="s-eye" style="text-align:center">Vídeos</div>
+    <h2 style="text-align:center;margin-bottom:10px">Conheça o Bosque Villaggio</h2>
+    <p class="s-desc" style="text-align:center;margin:0 auto 40px">O empreendimento e a casa modelo real — veja antes de todo mundo.</p>
 
-    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:18px;border:1px solid rgba(201,168,76,0.25);box-shadow:0 20px 60px rgba(0,0,0,0.5)">
-      <iframe
-        src="https://www.youtube.com/embed/LmUw-yBVRsA?rel=0&modestbranding=1&playsinline=1"
-        title="Bosque Villaggio — Eusébio/CE"
-        style="position:absolute;top:0;left:0;width:100%;height:100%;border:none"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        loading="lazy">
-      </iframe>
+    <div id="video-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+
+      <div>
+        <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-family:'DM Sans',sans-serif">🎬 Tour pelo empreendimento</div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px;border:1px solid rgba(201,168,76,0.25);box-shadow:0 16px 50px rgba(0,0,0,0.5)">
+          <iframe
+            src="https://www.youtube.com/embed/LmUw-yBVRsA?rel=0&modestbranding=1&playsinline=1"
+            title="Bosque Villaggio — Tour"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border:none"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-family:'DM Sans',sans-serif">🏡 Casa modelo real</div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px;border:1px solid rgba(201,168,76,0.25);box-shadow:0 16px 50px rgba(0,0,0,0.5)">
+          <iframe
+            src="https://www.youtube.com/embed/wO-W6Wezowk?rel=0&modestbranding=1&playsinline=1"
+            title="Bosque Villaggio — Casa Modelo Real"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border:none"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
     </div>
 
-    <button class="btn-p" style="margin-top:32px;font-size:15px;padding:15px 30px" onclick="abrirForm()">
-      🏡 Quero garantir minha unidade
-    </button>
+    <div style="text-align:center;margin-top:36px">
+      <button class="btn-p" style="font-size:15px;padding:15px 32px" onclick="abrirForm()">
+        🏡 Quero garantir minha unidade
+      </button>
+    </div>
   </div>
 </section>
+
+<style>
+@media(max-width:700px){
+  #video-grid{grid-template-columns:1fr!important}
+}
+</style>
 
 <!-- QUOTE -->
 <div class="quote-sec">
@@ -686,7 +713,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.06);paddin
     <div><div class="ft-brand">BOSQUE VILLAGGIO</div><div style="font-size:10px;color:var(--muted)">Formes Engenharia · Eusébio/CE</div></div>
   </div>
   <div class="ft-txt">Timbú · Eusébio/CE · Próximo à CE-010</div>
-  <div class="ft-txt">© 2025 Bosque Villaggio · Comercialização: Marcos Lima · CRECI 26445 · @paraisoimobiliario</div>
+  <div class="ft-txt">© Paraíso Imobiliario · Todas às informações aqui são de responsabilidade de: Marcos Lima · CRECI 26445 · @paraisoimobiliario</div>
 </footer>
 
 <div class="sticky-wa">
