@@ -709,59 +709,32 @@ if(cEl&&window.IntersectionObserver){new IntersectionObserver(function(e){e.forE
         <span class="hs-loading-dot"></span>
         <span class="hs-loading-dot"></span>
       </div>
+      <iframe
+        id="hsIframe"
+        src="https://qx89g.share.hsforms.com/26hP_GFBeR7uyPL_WjjveZg"
+        style="width:100%;min-height:540px;border:none"
+        loading="lazy"
+        onload="document.getElementById('hsLoading').style.display='none'"
+        allow="camera; microphone">
+      </iframe>
     </div>
   </div>
 </div>
 
-<script src="https://js.hsforms.net/forms/v2.js"></script>
 <script>
-var _hsLoaded = false;
-
 function abrirForm() {
-  var overlay = document.getElementById('hsOverlay');
-  overlay.classList.add('ativo');
+  document.getElementById('hsOverlay').classList.add('ativo');
   document.body.style.overflow = 'hidden';
-
   if (typeof fbq !== 'undefined') fbq('track', 'InitiateCheckout');
   if (typeof gtag !== 'undefined') gtag('event', 'open_form', {event_category: 'CTA'});
-
-  if (!_hsLoaded && typeof hbspt !== 'undefined') {
-    _carregarForm();
-  } else if (!_hsLoaded) {
-    var timer = setInterval(function() {
-      if (typeof hbspt !== 'undefined') {
-        clearInterval(timer);
-        _carregarForm();
-      }
-    }, 200);
-  }
 }
-
-function _carregarForm() {
-  document.getElementById('hsLoading').style.display = 'none';
-  hbspt.forms.create({
-    region: "na1",
-    portalId: "45220372",
-    formId: "ea13ff18-505e-47bb-b23c-bfd68e3bde66",
-    target: "#hsCorpo",
-    onFormSubmitted: function() {
-      if (typeof fbq !== 'undefined') fbq('track', 'CompleteRegistration', {value: 639900, currency: 'BRL'});
-      if (typeof gtag !== 'undefined') gtag('event', 'form_submit', {event_category: 'Lead'});
-      setTimeout(fecharForm, 5000);
-    }
-  });
-  _hsLoaded = true;
-}
-
 function fecharForm() {
   document.getElementById('hsOverlay').classList.remove('ativo');
   document.body.style.overflow = '';
 }
-
 function hsBgClick(e) {
   if (e.target === document.getElementById('hsOverlay')) fecharForm();
 }
-
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') fecharForm();
 });
